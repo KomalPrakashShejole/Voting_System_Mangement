@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.VotingFinal_System.VotingFinalSystemApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.339 s - in com.VotingFinal_System.VotingFinalSystemApplicationTests

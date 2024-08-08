@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Voter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Voter</h2>
+        <form th:action="@{/voters/update/{id}(id=${voter.id})}" th:object="${voter}" method="post">
+            <label for="VoterName">Name:</label>
+            <input type="text" id="VoterName" th:field="*{VoterName}" required>
+            
+            <label for="DOB">Date of Birth:</label>
+            <input type="date" id="DOB" th:field="*{DOB}" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" th:field="*{gender}">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" th:field="*{username}" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" required>
+            
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
